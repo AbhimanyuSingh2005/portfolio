@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 32px;
+    /* box-sizing:content-box; */
+}
+#top{
+    background-color: rgb(252, 252, 252);    
+}
+.navbar {
+    transition: all 0.5s;
+    position: sticky;
+    top : 0 ;
+    left: 0;
+    display: flex;
+    color: rgb(65,84,241);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    backdrop-filter: blur(50px);
+}
+.afternav{
+    background: rgba(255, 255, 255, 0.678);
+    padding: 15px 60px;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.3);
+    color: #766dff;
+}
+
+.navbar p {
+    text-decoration: none;
+    font-weight: 700;   
+}
+.navbar ul{
+    display : flex;
+}
+.navbar ul li{
+    list-style: none;
+    font-size: 0.5em;
+    margin-left: 40px;
+    padding: 10px 20px;
+}
+.navbar .contact{
+    background-color: #766dff;
+    color: #fff;
+    border-radius: 10px;
+}
+.navbar .contact:hover{
+    background-color: rgb(255, 114, 148);
+    color: #fff;
+}
+
+.navbar ul li:hover{
+    color: #766dff;;
+}
+.hero{
+    background-image: -webkit-linear-gradient(0deg, #766dff 0%, #5ebec8 100%);
+    display: grid;
+    grid-template-columns: auto auto;
+    color: rgb(255, 255, 255);
+    margin: 20px 60px;
+    width: auto;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 2px 5px  20px rgba(0, 0, 0,0.5);
+    line-height: 1.5;
+}
+.hero profile{
+
+    height: 100%;
+    width: auto;
+}
+.hero span{
+    margin: 60px 100px ;
+    font-size: 0.75em;
+}
+.hero h1{
+    font-size: 2em;
+}
+.hero  .details{
+    color: rgb(226, 224, 224);
+}
+.hero .icon{
+    font-size: 0.75em;
+    margin-top: 10px;
+    color: rgb(226, 224, 224);
+    display: flex;
+    align-items: center;
+}
+.hero .img-icon {
+    width: 20px;
+}
+.hero .social{
+    margin-top: 20px;
+    
+}
+.hero .social-link{
+    text-decoration: none;
+    color: #fff;
+}
+.hero .social-link:hover{
+    transition: all 0.5s;
+    opacity: 70%;
+}
+
