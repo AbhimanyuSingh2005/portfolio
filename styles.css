@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 a {
@@ -82,25 +83,33 @@ body {
 #hero {
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #5ebec8 100%);
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 40vw auto;
     color: rgb(255, 255, 255);
     margin: 20px 60px;
-    width: auto;
+    width: fit-content;
+    height: fit-content;
     text-align: left;
     border-radius: 10px;
     box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.5);
     line-height: 1.5;
+    overflow: hidden;
+}
+
+#hero span::-webkit-scrollbar {
+    display: none;
 }
 
 #hero .profile {
-
-    height: 100%;
-    width: auto;
+    width: 40vw;
 }
 
 #hero span {
-    margin: 60px 100px;
-    font-size: 0.75em;
+    box-sizing: border-box;
+    font-size: 1.8vw;
+    padding: 40px 40px;
+    overflow: scroll;
+    height: fit-content;
+    max-height: 50vw;
 }
 
 #hero h1 {
@@ -116,7 +125,7 @@ body {
     margin-top: 10px;
     color: rgb(226, 224, 224);
     display: flex;
-    align-items: center;
+    align-items: self-start;
 }
 
 #hero .img-icon {
@@ -179,14 +188,19 @@ body {
     padding: 40px 60px;
 }
 
-#education::before {
+.dot{
+    position: relative;
+}
+.dot::before {
     content: '';
     width: 90%;
     background-color: rgba(255, 255, 255, 0.322);
     border-radius: 2.5px;
     height: 5px;
     position: absolute;
-    transform: translate(-50%, 150.5px);
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 #education h2 {
@@ -230,7 +244,7 @@ body {
 /* /////////////////////////////////////////////////////////////////////////////project section ///////////////////////////////////////////////////////////////////////*/
 #projects {
     text-align: center;
-    padding: 40px 60px;
+    margin: 40px 0;
 }
 
 #projects h2 {
@@ -239,60 +253,64 @@ body {
 }
 
 #projects div {
-    display: flex;
-    justify-content: center;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 5vw 88vw 5vw;
+    place-items: center;
+    /* overflow: hidden; */
+    gap: .5vw;
+    place-items: center;
 }
-
-#projects div .carousel-btn {
-    position: absolute;
+.carousel-btn{
+    width: 4vw;
+    z-index: 1;
 }
-
-#projects div [data-btn="previous"] {
-    transform: translate(-1300%, 325%);
-}
-
-#projects div [data-btn="next"] {
-    transform: translate(1300%, 325%);
-}
-
 
 .project-container {
-    height: 460px;
+    height: 50vh;
+    min-height: 250px;
+    width: 85vw;
+    /* overflow: hidden; */
     position: relative;
 }
 
 .project-container .project {
     position: absolute;
     list-style: none;
-    /* height: 0px; */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* transition:all 1s ease-in-out; */
+    transition: all 450ms ease-in-out;
 }
 
 .project-container .project img {
     border-radius: 15px;
     border: 1px solid black;
-    height : 360px;
+    width: 55vw;
+    scale: 0;
+    transition: all 450ms ease-in-out;
 }
 
 .project-container [data-active] {
     z-index: 10;
-    
+}
+.project-container [data-active] img{
+    scale: 1;
 }
 
 .project-container [data-left] img,
 .project-container [data-right] img {
-    height: 260px;
+    scale: .7;
 }
 
 .project-container [data-left] {
-    transform: translate(-120%, -50%);
+    transform: translate(-95%, -50%);
+    z-index: -1;
 }
 
 .project-container [data-right] {
-    transform: translate(20%, -50%);
+    transform: translate(-5%, -50%);
+    z-index: -1;
 }
 
 
